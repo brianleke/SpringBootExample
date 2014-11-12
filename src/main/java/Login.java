@@ -1,5 +1,6 @@
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.web.ErrorController;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +13,9 @@ import java.util.Arrays;
 @RestController
 @EnableAutoConfiguration
 @ComponentScan
-public class Login {
+public class Login implements ErrorController {
+
+    private static final String PATH = "/error";
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String index() {
@@ -24,15 +27,20 @@ public class Login {
         return "This is the name: " + name;
     }
 
-    @RequestMapping("/error")
+    @RequestMapping(value = PATH)
     public String errorPage(){
         return "404: Page Not Found!";
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String loginPost(@RequestParam(value = "name", defaultValue = "Test") String name){
-        return "This is the name: " + name;
+    @Override
+    public String getErrorPath() {
+        return PATH;
     }
+
+//    @RequestMapping(value = "/login", method = RequestMethod.POST)
+//    public String loginPost(@RequestParam(value = "name", defaultValue = "Test") String name){
+//        return "This is the name: " + name;
+//    }
 
 
 

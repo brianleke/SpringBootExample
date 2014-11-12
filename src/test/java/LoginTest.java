@@ -50,6 +50,14 @@ public class LoginTest {
     }
 
     @Test
+    public void testShouldOverrideTheErrorPathMethod(){
+        Login login = new Login();
+        String expectedPath = "/error";
+
+        assertEquals(login.getErrorPath(), expectedPath);
+    }
+
+    @Test
     public void testShouldKnowLoginRedirectsWithMessage()
     {
 
