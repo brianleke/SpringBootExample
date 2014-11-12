@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="LoginTest" time="0.211" tests="5" errors="0" skipped="0" failures="0">
+<testsuite name="LoginTest" time="0.223" tests="5" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries"/>
@@ -67,5 +67,5 @@
   <testcase name="testShouldKnowThatHomeReturnsHello" classname="LoginTest" time="0"/>
   <testcase name="testShouldOverrideTheErrorPathMethod" classname="LoginTest" time="0"/>
   <testcase name="testShouldHaveTheErrorPageMessageOfNotFound" classname="LoginTest" time="0"/>
-  <testcase name="testShouldKnowLoginRedirectsWithMessage" classname="LoginTest" time="0.206"/>
+  <testcase name="testShouldKnowLoginRedirectsWithMessage" classname="LoginTest" time="0.218"/>
 </testsuite>
