@@ -6,7 +6,10 @@ import wiremock.org.apache.http.client.HttpClient;
 import wiremock.org.apache.http.client.methods.HttpGet;
 import wiremock.org.apache.http.impl.client.DefaultHttpClient;
 
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.mock;
@@ -55,6 +58,14 @@ public class LoginTest {
         String expectedPath = "/error";
 
         assertEquals(login.getErrorPath(), expectedPath);
+    }
+
+    @Test
+    public void testUserRedirectShouldRetrieveNewUserWithDummyDetails(){
+        Login login = new Login();
+        User expectedUser = new User("firstName", "lastName");
+
+        assertThat(login.getUsers(), is(equalTo(expectedUser)));
     }
 
     @Test
