@@ -24,6 +24,11 @@ public class Login {
         return "This is the name: " + name;
     }
 
+    @RequestMapping("/error")
+    public String errorPage(){
+        return "404: Page Not Found!";
+    }
+
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String loginPost(@RequestParam(value = "name", defaultValue = "Test") String name){
         return "This is the name: " + name;
