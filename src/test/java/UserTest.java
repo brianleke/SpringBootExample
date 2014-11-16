@@ -1,4 +1,3 @@
-import junit.framework.Assert;
 import org.hamcrest.Matchers;
 import org.junit.Test;
 

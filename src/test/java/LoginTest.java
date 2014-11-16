@@ -1,6 +1,5 @@
 import org.junit.Test;
 import org.mockito.Mock;
-import org.springframework.boot.SpringApplication;
 import wiremock.org.apache.http.HttpResponse;
 import wiremock.org.apache.http.client.HttpClient;
 import wiremock.org.apache.http.client.methods.HttpGet;
@@ -11,7 +10,6 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
-import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
@@ -20,13 +18,13 @@ public class LoginTest {
     private HttpClient defaultHttpClient = new DefaultHttpClient();
     private HttpGet request = new HttpGet("/index");
 
-    @Test
-    public void testShouldKnowThatHomeReturnsHello(){
-        Login login = new Login();
-        String expectedGreeting = "Hello World!!!!!!!!!";
-
-        assertEquals(login.index(), expectedGreeting);
-    }
+//    @Test
+//    public void testShouldKnowThatHomeReturnsHello(){
+//        Login login = new Login();
+//        String expectedGreeting = "Hello World!!!!!!!!!";
+//
+//        assertEquals(login.index(), expectedGreeting);
+//    }
 
 //    @Test
 //    public void testShouldRunSpringApplicationWhenMainIsInvoked(){
